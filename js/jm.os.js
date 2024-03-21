@@ -1329,7 +1329,7 @@ $jm.os = new (function () {
         }
 
         //加入低浏览器警告
-        if ($.browser.msie && $.browser.version < 9) {
+        if ($.browser && $.browser.msie && $.browser.version < 9) {
             var tootipcontent = $('<div class="jm_win_tooltip" style="left:2px;top:2px;margin-top:4px;margin-right:10px;z-index:1;float:right;"></div>');
             tootipcontent.html("请使用火狐,谷歌,苹果,IE9及以上版本浏览器获得最佳效果");
             tootipcontent.appendTo(this.statusTool.element);
