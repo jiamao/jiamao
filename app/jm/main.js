@@ -63,17 +63,4 @@ des:true,
 des:true,
     bgMenu: false//加到桌面右健菜单中
 }
-,
- {title: '拼音翻译',
-    modal: false,   
-    position: 'center',   //显示位置,top=顶部,left =左边,center居中        
-    width: 600,
-    height: 480,
-    url: "http://www.jiamaocode.com/py/",
-    ico: "~/app/jm/py.png",
-    resizeable: true,
-    iframe: true,
-des:true,
-    bgMenu: false//加到桌面右健菜单中
-}
 ];
