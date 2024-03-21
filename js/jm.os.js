@@ -1251,6 +1251,7 @@ $jm.os = new (function () {
         $('#jm_quickdesktop_' + $jm.os.config.desktop.desIndex).removeClass('quickDesktop_a_focus');
         $('#jm_quickdesktop_' + index).addClass('quickDesktop_a_focus'); //表示当前桌面过引样式
         $jm.os.config.desktop.desIndex = index;
+        return des;
     }
 
     /**
