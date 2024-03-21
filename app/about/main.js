@@ -5,7 +5,7 @@
     width: 600,
     height: 480,
     resizeable: true,    
-    des: false,
+    des: true,
     bgMenu: true//加到桌面右健菜单中
 }
 ];
