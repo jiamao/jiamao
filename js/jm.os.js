@@ -1349,14 +1349,14 @@ $jm.os = new (function () {
     * @for $jm.os   
     * @private     
     **/
-    this._initApp = function () {
+    this._initApp = function (version) {
         var index = 0;
         var linkapp = function () {
             var lnk = $jm.os.config.appLinks[index];
             if ($jm.isNull(lnk)) return;
             var url = $jm.checkUrl('~/app/' + lnk);
             //加载应用参数
-            $jm.load(url + '/main.js', function (js) {
+            $jm.load(url + '/main.js?' + version, function (js) {
                 try {
                     js = $jm.checkUrl(js); //先处理其中的url
                     var apppars = eval(js);
@@ -1385,8 +1385,11 @@ $jm.os = new (function () {
     * @for $jm.os   
     * @param {Function} callback 初始化后的回调     
     **/
-    this.init = function (callback) {
-        //var thiscallback = callback;
+    this.init = function (version, callback) {
+        if(typeof version === 'function') {
+            callback = version;
+            version='1.0';
+        }
 
         //绑定窗口大小改变事件
         $(window).resize(this.resizeHandler);
@@ -1399,7 +1402,7 @@ $jm.os = new (function () {
 
             //延迟加载应用
             //setTimeout($jm.os._initApp, 400);
-            $jm.os._initApp();
+            $jm.os._initApp(version);
 
             //if (callback) callback();            
 
