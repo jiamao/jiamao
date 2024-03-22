@@ -145,7 +145,7 @@ $jm.os = new (function () {
             * @type String
             * @private
             **/
-            backGroundUrl: '~/css/default/images/wallpaper.jpg', //背景图url
+            backGroundUrl: 'https://jtcospublic.ciccten.com/public/static/os/css/default/images/wallpaper.jpg', //背景图url
 
             /**
             * 通过索引获取快捷方式
