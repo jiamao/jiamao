@@ -1349,11 +1349,14 @@ $jm.os = new (function () {
     * @for $jm.os   
     * @private     
     **/
-    this._initApp = function (version) {
+    this._initApp = function (version, callback) {
         var index = 0;
         var linkapp = function () {
             var lnk = $jm.os.config.appLinks[index];
-            if ($jm.isNull(lnk)) return;
+            if ($jm.isNull(lnk)) {
+                callback && callback();
+                return;
+            }
             var url = $jm.checkUrl('~/app/' + lnk);
             //加载应用参数
             $jm.load(url + '/main.js?' + version, function (js) {
@@ -1398,13 +1401,10 @@ $jm.os = new (function () {
             //状态栏
             $jm.os.statusTool = new $jm.os.appItem({ parent: $('body'), element: $('<div class="jmos_status"></div>'), sys: true }); //系统级别的应用
 
-            $jm.os.loadDesktop(callback);
-
-            //延迟加载应用
-            //setTimeout($jm.os._initApp, 400);
-            $jm.os._initApp(version);
-
-            //if (callback) callback();            
+            $jm.os.loadDesktop(function(){
+                //延迟加载应用
+                $jm.os._initApp(version, callback);
+            });     
 
             $jm.os.resizeHandler();
         };
