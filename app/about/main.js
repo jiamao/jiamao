@@ -1,5 +1,6 @@
 [
     { 
+        id: 'about',
         title: '关于我',
         ico: "https://jtcospublic.ciccten.com/config-server/1711073103519927178/10080714.png",
         modal: false,    
