@@ -1,5 +1,6 @@
 [
-    { title: 'AIGC导航',
+    { 
+    title: 'AIGC导航',
     modal: false,    
     position: 'center',   //显示位置,top=顶部,left =左边,center居中       
     url: 'https://www.aigcwhere.com/', 
