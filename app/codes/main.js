@@ -18,6 +18,7 @@
         iframe: true,
         width: 800,
         height: 600,
+        state:$jm.winState.max,
         resizeable: true,    
         des: true
     },
